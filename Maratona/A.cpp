@@ -3,11 +3,10 @@
 using namespace std;
 
 int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int N, H;
     while (cin >> N >> H && N != 0) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-
         int result = 0;
         vector<int> B(N);
         for(int aux = 0 ; aux < N ; aux++) {
