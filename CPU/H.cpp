@@ -4,6 +4,15 @@
 
 using namespace std;
 
+/*
+Fórmulas:
+
+Vérticies - 2^N
+Arestas - (N * 2^N) / 2
+Diagonais principais - 2^N / 2 , para N > 2
+Diagonais secundárias - (N + 1) * N^(N - 2) , para N > 3
+*/
+
 int doisElevadoN(int N) {
     if(N == 0) {
         return 1;
@@ -21,16 +30,24 @@ int numArestas(int N) {
     return (N * aux) / 2;
 }
 
-void makeBinaryString(int N) {
-    vector<string> vetor;
-
-    for(int aux = 0 ; aux < N ; aux++) {
-        string binary = bitset<MAX>(aux).to_string();
-        vetor.push_back(binary);
+int diagPrincipais(int N) {
+    if(N < 2) {
+        return 0;
+    } else {
+        return doisElevadoN(N) / 2;
     }
-    //for(int aux = 0 ; aux < vetor.size() ; aux++) {
-    //    cout << vetor[aux] << std::endl;
-    //}
+}
+
+int diagSecundarias(int N) {
+    if(N < 3) {
+        return 0;
+    } else {
+        int result = 1;
+        for(int a = 0 ; a < N - 2 ; a++) {
+            result = result * N;
+        }
+        return (N + 1) * result;
+    }
 }
 
 int main(void) {
@@ -42,16 +59,10 @@ int main(void) {
     while (cin >> N && N >= 0) {
         int verticie = doisElevadoN(N);
         int arestas = numArestas(N);
+        int principais = diagPrincipais(N);
+        int secundarias = diagSecundarias(N);
 
-        makeBinaryString(N);
-
-        cout << verticie << ' ' << arestas << endl;
+        cout << verticie << ' ' << arestas << ' ' << principais << ' ' << secundarias << endl;
     }
-    
-    //int decimal = 65;
-    //const int n = 8;
-    //string binary = bitset<n>(decimal).to_string();
-    //cout << binary << endl;        // 01000001
-
     return 0;
 }
