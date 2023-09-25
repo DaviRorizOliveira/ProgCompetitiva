@@ -7,8 +7,8 @@ Fórmulas:
 
 Vérticies - 2^N
 Arestas - (N * 2^N) / 2
-Diagonais principais - 2^N / 2 , para N > 2
-Diagonais secundárias - (N + 1) * N^(N - 2) , para N > 3
+Diagonais principais - 2^N / 2 , para N > 1
+Diagonais secundárias - (N + 1) * N^(N - 2) , para N > 2
 */
 
 int doisElevadoN(int N) {
