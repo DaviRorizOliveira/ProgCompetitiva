@@ -53,7 +53,6 @@ int main(void) {
     cin.tie(NULL);
 
     int N;
-
     while (cin >> N && N <= 20) {
         int verticie = doisElevadoN(N);
         int arestas = numArestas(N);
