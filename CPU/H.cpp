@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-#define MAX 20
-
 using namespace std;
 
 /*
@@ -56,7 +54,7 @@ int main(void) {
 
     int N;
 
-    while (cin >> N && N >= 0) {
+    while (cin >> N && N <= 20) {
         int verticie = doisElevadoN(N);
         int arestas = numArestas(N);
         int principais = diagPrincipais(N);
