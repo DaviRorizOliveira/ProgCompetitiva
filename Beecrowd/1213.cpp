@@ -1,5 +1,4 @@
-// TEMPO LIMITE EXCEDIDO !!!
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
@@ -8,12 +7,16 @@ int main(void) {
     cin.tie(NULL);
 
     int N;
-    while(cin >> N) {
-        int result = 2;
-        for(int a = 11 ; a % N != 0 ; a = 10 * a + 1) {
+    while (cin >> N) {
+        int aux = 1;
+        int result = 1;
+
+        while (aux != 0) {
+            aux = (aux * 10 + 1) % N;
             result++;
         }
         cout << result << endl;
     }
+
     return 0;
 }

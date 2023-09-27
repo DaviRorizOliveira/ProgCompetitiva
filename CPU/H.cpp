@@ -47,6 +47,14 @@ int diagSecundarias(int N) {
         return (N + 1) * result;
     }
 }
+// (2^n - 2  - n) * 2^n / 2
+long long int teste(int N) {
+    if(N < 3) {
+        return 0;
+    } else {
+        return ( doisElevadoN(N) - 2 - N ) * doisElevadoN(N) / 2;
+    }
+}
 
 int main(void) {
     ios_base::sync_with_stdio(false);
@@ -57,7 +65,8 @@ int main(void) {
         int verticie = doisElevadoN(N);
         int arestas = numArestas(N);
         int principais = diagPrincipais(N);
-        int secundarias = diagSecundarias(N);
+        //int secundarias = diagSecundarias(N);
+        long long int secundarias = teste(N);
 
         cout << verticie << ' ' << arestas << ' ' << principais << ' ' << secundarias << endl;
     }

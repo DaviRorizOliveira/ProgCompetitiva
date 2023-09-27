@@ -1,20 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 int main() {
-    // Criando um vetor de strings
-    std::vector<std::string> vetorDeStrings;
-
-    // Adicionando strings ao vetor
-    vetorDeStrings.push_back("Primeira String");
-    vetorDeStrings.push_back("Segunda String");
-    vetorDeStrings.push_back("Terceira String");
-
-    // Acessando e imprimindo strings do vetor
-    for (const std::string& str : vetorDeStrings) {
-        std::cout << str << std::endl;
-    }
+    int n = 3;
+    // cout << 2^(2 * n-1) - n * 2^(n - 1) - 1 << endl;
+    cout << pow(2, (2 * n - 1) ) - n * pow(2, (n - 1) ) - 1 << endl;
 
     return 0;
 }
