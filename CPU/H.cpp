@@ -36,19 +36,7 @@ int diagPrincipais(int N) {
     }
 }
 
-int diagSecundarias(int N) {
-    if(N < 3) {
-        return 0;
-    } else {
-        int result = 1;
-        for(int a = 0 ; a < N - 2 ; a++) {
-            result = result * N;
-        }
-        return (N + 1) * result;
-    }
-}
-// (2^n - 2  - n) * 2^n / 2
-long long int teste(int N) {
+long long int diagSecundarias(int N) {
     if(N < 3) {
         return 0;
     } else {
@@ -65,8 +53,8 @@ int main(void) {
         int verticie = doisElevadoN(N);
         int arestas = numArestas(N);
         int principais = diagPrincipais(N);
-        //int secundarias = diagSecundarias(N);
-        long long int secundarias = teste(N);
+        int secundarias = diagSecundarias(N);
+        //long long int secundarias = teste(N);
 
         cout << verticie << ' ' << arestas << ' ' << principais << ' ' << secundarias << endl;
     }
